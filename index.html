@@ -13,7 +13,20 @@
     <!-- tailwind css cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
+<body class="bg-[#f4f5f7] min-h-screen flex flex-col justify-center items-center outfit-regular overscroll-x-none">
+    <section class="background-container">
+        <div class="background w-[250px] sm:w-[340px] h-28 sm:h-32 flex justify-center items-center bg-[url('assets/bg.png')] bg-cover">
+        <img src="assets/group.png" alt="" class="">
+    </div>
+    </section>
+    <section>
+        <form class="flex flex-col sm:w-[450px] mx-auto bg-white p-8 rounded-3xl gap-3.5">
+            <label for="user-number" class="font-medium text-[16px]">Mobile Number</label>
+            <input type="tel" class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]" name="user-number" id="user-number" placeholder="Enter your number" maxlength="13" minlength="11">
+            <label for="user-pin" class="font-medium text-[16px]">4 Digit Pin</label>
+            <input type="password" class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]" name="user-pin" id="user-pin" placeholder="Enter 4 Digit Pin" maxlength="4">
+            <input type="submit" class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2" value="Login">
+        </form>
+    </section>
 </body>
 </html>

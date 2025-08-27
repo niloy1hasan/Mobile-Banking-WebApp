@@ -104,7 +104,51 @@
                 </section>
 
             </div>
-            
+            <!-- add money section -->
+
+            <section class="add-money-section px-4 pt-3 mb-10">
+                <h2 class="text-[#080808]/90 font-semibold text-lg pb-3">Add
+                    Money</h2>
+
+                <div class="form-section">
+                    <form
+                        class="flex flex-col sm:max-w-[450px] mx-auto bg-white p-8 rounded-3xl gap-3.5">
+                        <label for="user-selected-bank"
+                            class="font-medium text-[16px]">Select a bank</label>
+                        <select id="user-selected-bank" name="user-selected-bank" class="select border-0 bg-[#F4F5F7] px-5 w-full rounded-full placeholder:text-[#080808] font-light text-[16px]">
+                            <option disabled selected>Select bank</option>
+                            <option>South East Bank</option>
+                            <option>Islami Bank</option>
+                            <option>mutual Trust Bank</option>
+                        </select>
+                        <label for="bank-account-number"
+                            class="font-medium text-[16px]">Bank Account
+                            Number</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="bank-account-number" id="bank-account-number"
+                            placeholder="Enter 11 digit account number" maxlength="11"
+                            minlength="11">
+                        <label for="money-amount"
+                            class="font-medium text-[16px]">Amount to
+                            Add</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="money-amount" id="money-amount"
+                            placeholder="Add Amount to withdraw">
+                        <label for="user-pin"
+                            class="font-medium text-[16px]">Pin Number</label>
+                        <input type="password"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="user-pin" id="user-pin"
+                            placeholder="Enter 4 Digit Pin" maxlength="4">
+                        <input type="submit" id="login-btn"
+                            class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
+                            value="Add Money">
+                    </form>
+                </div>
+            </section>
+
         </main>
     </body>
 </html>

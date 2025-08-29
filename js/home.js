@@ -4,51 +4,63 @@
 const menuBtnAddMoney = document.getElementById('add-money-menu-btn');
 const menuBtnCashout = document.getElementById('cashout-menu-btn');
 
-/* section's section */
-const addMoneySection = document.getElementById('add-money-section');
-const cashoutSection = document.getElementById('cashout-section');
-
 /* add money section */
 const addMoneyBtn = document.getElementById('add-money-btn');
-const userAccountNumber = document.getElementById('bank-account-number');
-const userPin = document.getElementById('user-pin');
-const userAddMoneyAmount = document.getElementById('money-amount');
 const userSelectedBank = document.getElementById('user-selected-bank');
 const userBalance = document.getElementById('balanceAmount');
 
 /* cashout section */
-const agentNumber = document.getElementById('agent-number');
-const cashoutAmount = document.getElementById('cashout-amount');
-const cashoutUserPIN = document.getElementById('cashout-user-pin');
 const withdrawBtn = document.getElementById('withdraw-btn');
 
 /* end declaration part */
 // 
 /* start function part */
 
-function toggleMenu(visibleItem){
-    addMoneySection.style.display = 'none';
-    cashoutSection.style.display = 'none';
+function toggleMenu(id){
+    const formElement = document.getElementsByClassName('formElement');
 
-    visibleItem.style.display = 'block';
-    visibleItem.cl = 'block';
-    visibleItem.style.display = 'block';
+    for(const i of formElement)
+        i.style.display = 'none';
+
+    document.getElementById(id).style.display = 'block';
 }
 
 
-function userAuth(accountNumber, password){
+function userAuth(accountID, pinID){
 const account = '00123456789';
 const pin = '1234';
 
-if(accountNumber!==account){
+if(document.getElementById(accountID).value!==account){
         alert("Account Number not found");
         return false;
-    } else if(password!==pin){
+    } else if(document.getElementById(pinID).value!==pin){
         alert("Pin is wrong");
         return false;
     }
 
-return (account===accountNumber && password===pin);
+return true;
+}
+
+function getValue(id){
+    return document.getElementById(id).value;
+}
+
+function getBalance(){
+    return parseInt(document.getElementById('balanceAmount').innerText);
+}
+
+function resetValue(resetItem){
+    for(const i of resetItem){
+        document.getElementById(i).value = "";
+    }
+}
+
+function getIntValue(id){
+ return parseInt(document.getElementById(id).value);
+}
+
+function getIntText(id){
+    return parseInt(document.getElementById(id).innerText);
 }
 
 /* end function part */
@@ -59,12 +71,12 @@ return (account===accountNumber && password===pin);
 
 menuBtnAddMoney.addEventListener("click", function(event){
     event.preventDefault();
-    toggleMenu(addMoneySection);
+    toggleMenu('add-money-section');
 });
 
 menuBtnCashout.addEventListener("click", function(event){
     event.preventDefault();
-    toggleMenu(cashoutSection);
+    toggleMenu('cashout-section');
 });
     
 
@@ -73,19 +85,13 @@ menuBtnCashout.addEventListener("click", function(event){
 /* add money */
 addMoneyBtn.addEventListener("click", function(event){
     event.preventDefault();
-    
-    let givenAccountNumber = userAccountNumber.value;
-    let giverUserPin = userPin.value;
-    if(!userAuth(givenAccountNumber, giverUserPin)) return;
+    if(!userAuth('bank-account-number', 'user-pin')) return;
 
-    
-    let amount = parseInt(userAddMoneyAmount.value);
+    let amount = getIntValue('money-amount');
     if(amount>0){
-    amount += parseInt(userBalance.innerText);
+    amount += getBalance();
     userBalance.innerText = amount;
-    userAddMoneyAmount.value = "";
-    userAccountNumber.value = "";
-    userPin.value = "";
+    resetValue(['money-amount', 'bank-account-number', 'user-pin']);
     } else {
         alert("Given amount is not valid");
     }
@@ -94,17 +100,14 @@ addMoneyBtn.addEventListener("click", function(event){
 /* cashout money */
 withdrawBtn.addEventListener("click", function(event){
     event.preventDefault();
-    let givenAccountNumber = agentNumber.value; 
-    let giverUserPin = cashoutUserPIN.value;
-    if(!userAuth(givenAccountNumber, giverUserPin)) return;
 
-    let amount = parseInt(userBalance.innerText);
+    if(!userAuth('agent-number', 'cashout-user-pin')) return;
+
+    let amount = getIntValue('cashout-amount');;
     if(amount>0){
-    amount -= parseInt(cashoutAmount.value);
+    amount = getBalance() - amount;
     userBalance.innerText = amount;
-    agentNumber.value = "";
-    cashoutUserPIN.value = "";
-    cashoutAmount.value = "";
+    resetValue(['agent-number', 'cashout-user-pin', 'cashout-amount']);
     } else {
         alert("Given amount is not valid");
     }

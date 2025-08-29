@@ -3,6 +3,7 @@
 /* menu button section */
 const menuBtnAddMoney = document.getElementById('add-money-menu-btn');
 const menuBtnCashout = document.getElementById('cashout-menu-btn');
+const transferMoneyBtn = document.getElementById('transfer-money-btn');
 
 /* add money section */
 const addMoneyBtn = document.getElementById('add-money-btn');
@@ -11,6 +12,9 @@ const userBalance = document.getElementById('balanceAmount');
 
 /* cashout section */
 const withdrawBtn = document.getElementById('withdraw-btn');
+
+/* transfer section */
+const transferSendBtn = document.getElementById('transfer-btn');
 
 /* end declaration part */
 // 
@@ -78,7 +82,11 @@ menuBtnCashout.addEventListener("click", function(event){
     event.preventDefault();
     toggleMenu('cashout-section');
 });
-    
+  
+transferMoneyBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    toggleMenu('transfer-money-section');
+});
 
 
 
@@ -112,6 +120,24 @@ withdrawBtn.addEventListener("click", function(event){
         alert("Given amount is not valid");
     }
 });
+
+/* transfer money */
+
+transferSendBtn.addEventListener("click", function(event){
+    event.preventDefault();
+
+    if(!userAuth('transfer-account-number', 'transfer-user-pin')) return;
+
+    let amount = getIntValue('transfer-amount');;
+    if(amount>0){
+    amount = getBalance() - amount;
+    userBalance.innerText = amount;
+    resetValue(['transfer-account-number', 'transfer-user-pin', 'transfer-amount']);
+    } else {
+        alert("Given amount is not valid");
+    }
+});
+
 
 
 /* end event listener part */

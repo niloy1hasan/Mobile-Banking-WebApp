@@ -70,7 +70,7 @@
                                 class="text-[#080808]/50 mt-1 font-normal sm:font-semibold">Cashout</h2>
                         </div>
                         <div
-                            class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
+                            id="transfer-money-btn" class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
                             <img src="assets/money1.png" alt width="24px"
                                 height="24px">
                             <h2
@@ -179,6 +179,40 @@
                         <input type="submit" id="withdraw-btn"
                             class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
                             value="Withdraw Money">
+                    </form>
+                </div>
+            </section>
+
+            <!-- Transfer Money section -->
+             <section id="transfer-money-section" class="formElement px-4 pt-3 mb-10 hidden">
+                <h2 class="text-[#080808]/90 font-semibold text-lg pb-3">Transfer Money</h2>
+
+                <div class="form-section">
+                    <form
+                        class="flex flex-col sm:max-w-[450px] mx-auto bg-white p-8 rounded-3xl gap-3.5">
+                        
+                        <label for="transfer-account-number"
+                            class="font-medium text-[16px]">User Account Number</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="transfer-account-number" id="transfer-account-number"
+                            placeholder="Enter 11 digit number" maxlength="11"
+                            minlength="11">
+                        <label for="transfer-amount"
+                            class="font-medium text-[16px]">Amount</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="transfer-amount" id="transfer-amount"
+                            placeholder="Enter amount to transfer">
+                        <label for="transfer-user-pin"
+                            class="font-medium text-[16px]">Pin Number</label>
+                        <input type="password"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="transfer-user-pin" id="transfer-user-pin"
+                            placeholder="Enter 4 Digit Pin" maxlength="4">
+                        <input type="submit" id="transfer-btn"
+                            class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
+                            value="Send Now">
                     </form>
                 </div>
             </section>

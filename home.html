@@ -55,7 +55,7 @@
                 <section class="banking-btn-section mt-4 pb-5">
                     <div class="btn-group grid grid-cols-3 grid-rows-2 gap-2">
                         <div
-                            class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
+                             id="add-money-menu-btn" class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
                             <img src="assets/wallet1.png" alt width="24px"
                                 height="24px">
                             <h2
@@ -63,7 +63,7 @@
                                 Money</h2>
                         </div>
                         <div
-                            class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
+                            id="cashout-menu-btn" class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
                             <img src="assets/send1.png" alt width="24px"
                                 height="24px">
                             <h2
@@ -106,7 +106,7 @@
             </div>
             <!-- add money section -->
 
-            <section class="add-money-section px-4 pt-3 mb-10">
+            <section id="add-money-section" class="add-money-section px-4 pt-3 mb-10">
                 <h2 class="text-[#080808]/90 font-semibold text-lg pb-3">Add
                     Money</h2>
 
@@ -145,6 +145,40 @@
                         <input type="submit" id="add-money-btn"
                             class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
                             value="Add Money">
+                    </form>
+                </div>
+            </section>
+
+            <!-- cashout section -->
+             <section id="cashout-section" class="px-4 pt-3 mb-10 hidden">
+                <h2 class="text-[#080808]/90 font-semibold text-lg pb-3">Cash Out</h2>
+
+                <div class="form-section">
+                    <form
+                        class="flex flex-col sm:max-w-[450px] mx-auto bg-white p-8 rounded-3xl gap-3.5">
+                        
+                        <label for="agent-number"
+                            class="font-medium text-[16px]">Agent Number</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="agent-number" id="agent-number"
+                            placeholder="Enter 11 digit number" maxlength="11"
+                            minlength="11">
+                        <label for="cashout-amount"
+                            class="font-medium text-[16px]">Amount</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="cashout-amount" id="cashout-amount"
+                            placeholder="Enter amount to withdraw">
+                        <label for="cashout-user-pin"
+                            class="font-medium text-[16px]">Pin Number</label>
+                        <input type="password"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="cashout-user-pin" id="cashout-user-pin"
+                            placeholder="Enter 4 Digit Pin" maxlength="4">
+                        <input type="submit" id="withdraw-btn"
+                            class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
+                            value="Withdraw Money">
                     </form>
                 </div>
             </section>

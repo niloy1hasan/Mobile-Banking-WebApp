@@ -25,7 +25,7 @@
             <div class="balance-box flex items-center gap-3">
                 <img src="assets/group.png" alt class="logo h-8 w-8">
                 <div class="balance-section">
-                    <h2 class="balance font-extrabold">$<span>45000</span></h2>
+                    <h2 class="balance font-extrabold">$<span id="balanceAmount">45000</span></h2>
                     <p
                         class="balance-status text-[12px] sm:text-sm"><span>Available
                             Balance</span></p>
@@ -142,13 +142,14 @@
                             class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
                             name="user-pin" id="user-pin"
                             placeholder="Enter 4 Digit Pin" maxlength="4">
-                        <input type="submit" id="login-btn"
+                        <input type="submit" id="add-money-btn"
                             class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
                             value="Add Money">
                     </form>
                 </div>
             </section>
-
         </main>
+
+        <script src="js/home.js"></script>
     </body>
 </html>

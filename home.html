@@ -78,7 +78,7 @@
                                 Money</h2>
                         </div>
                         <div
-                            class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
+                            id="get-bonus-btn" class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
                             <img src="assets/bonus1.png" alt width="24px"
                                 height="24px">
                             <h2
@@ -86,7 +86,7 @@
                                 Bonus</h2>
                         </div>
                         <div
-                            class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
+                            id="pay-bill-menu-btn" class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
                             <img src="assets/purse1.png" alt width="24px"
                                 height="24px">
                             <h2
@@ -94,7 +94,7 @@
                                 Bill</h2>
                         </div>
                         <div
-                            class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
+                            id="transaction-btn" class="btn bg-transparent px-0 text-center flex flex-col justify-center items-center rounded-[12px] border border-[#080808]/10 py-5 h-20">
                             <img src="assets/transaction1.png" alt width="24px"
                                 height="24px">
                             <h2
@@ -216,6 +216,75 @@
                     </form>
                 </div>
             </section>
+
+            <!-- get bonus section -->
+             <section id="get-bonus-section" class="formElement px-4 pt-3 mb-10 hidden">
+                <h2 class="text-[#080808]/90 font-semibold text-lg pb-3">Get Bonus</h2>
+
+                <div class="form-section">
+                    <form
+                        class="flex flex-col sm:max-w-[450px] mx-auto bg-white p-8 rounded-3xl gap-3.5">
+                        
+                        <label for="bonus-coupon"
+                            class="font-medium text-[16px]">Enter Bonus Coupon</label>
+                        <input type="text"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="bonus-coupon" id="bonus-coupon"
+                            placeholder="Enter your coupon" maxlength="10"
+                            minlength="4">
+                        
+                        <input type="submit" id="bonus-btn"
+                            class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
+                            value="Get Bonus">
+                    </form>
+                </div>
+            </section>
+
+
+            <!-- pay bill section -->
+
+            <section id="pay-bill-section" class="formElement px-4 pt-3 mb-10 hidden">
+                <h2 class="text-[#080808]/90 font-semibold text-lg pb-3">Pay Bill</h2>
+
+                <div class="form-section">
+                    <form
+                        class="flex flex-col sm:max-w-[450px] mx-auto bg-white p-8 rounded-3xl gap-3.5">
+                        <label for="user-pay-bill-selected-bank"
+                            class="font-medium text-[16px]">Select a bank</label>
+                        <select id="user-pay-bill-selected-bank" name="user-pay-bill-selected-bank" class="select border-0 bg-[#F4F5F7] px-5 w-full rounded-full placeholder:text-[#080808] font-light text-[16px]">
+                            <option disabled selected>Select bank</option>
+                            <option>South East Bank</option>
+                            <option>Islami Bank</option>
+                            <option>mutual Trust Bank</option>
+                        </select>
+                        <label for="pay-bill-bank-account-number"
+                            class="font-medium text-[16px]">Biller Account Number</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="pay-bill-bank-account-number" id="pay-bill-bank-account-number"
+                            placeholder="Enter account number" maxlength="11"
+                            minlength="11">
+                        <label for="pay-bill-money-amount"
+                            class="font-medium text-[16px]">Amount to
+                            Pay</label>
+                        <input type="tel"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="pay-bill-money-amount" id="pay-bill-money-amount"
+                            placeholder="Add Amount to pay">
+                        <label for="pay-bill-user-pin"
+                            class="font-medium text-[16px]">Pin Number</label>
+                        <input type="password"
+                            class="input bg-[#F4F5F7] px-5 w-full rounded-full border-0 placeholder:text-[#080808] font-light text-[16px]"
+                            name="pay-bill-user-pin" id="pay-bill-user-pin"
+                            placeholder="Enter 4 Digit Pin" maxlength="4">
+                        <input type="submit" id="pay-btn"
+                            class="btn btn-primary bg-[#0874F2] w-full rounded-full outline-0 border-0 text-[16px] mt-2"
+                            value="Pay Now">
+                    </form>
+                </div>
+            </section>
+
+
         </main>
 
         <script src="js/home.js"></script>

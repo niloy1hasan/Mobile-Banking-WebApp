@@ -4,6 +4,9 @@
 const menuBtnAddMoney = document.getElementById('add-money-menu-btn');
 const menuBtnCashout = document.getElementById('cashout-menu-btn');
 const transferMoneyBtn = document.getElementById('transfer-money-btn');
+const getBonusBtn = document.getElementById('get-bonus-btn');
+const payBillBtn = document.getElementById('pay-bill-menu-btn');
+const transactionBtn = document.getElementById('transaction-btn');
 
 /* add money section */
 const addMoneyBtn = document.getElementById('add-money-btn');
@@ -15,6 +18,12 @@ const withdrawBtn = document.getElementById('withdraw-btn');
 
 /* transfer section */
 const transferSendBtn = document.getElementById('transfer-btn');
+
+/* bonus section */
+const bonusBtn = document.getElementById('bonus-btn');
+
+/* pay bill section */
+const payBtn = document.getElementById('pay-btn');
 
 /* end declaration part */
 // 
@@ -88,6 +97,16 @@ transferMoneyBtn.addEventListener("click", function(event){
     toggleMenu('transfer-money-section');
 });
 
+getBonusBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    toggleMenu('get-bonus-section');
+});
+
+payBillBtn.addEventListener("click", function(event){
+   event.preventDefault();
+   toggleMenu('pay-bill-section'); 
+});
+
 
 
 /* add money */
@@ -138,6 +157,25 @@ transferSendBtn.addEventListener("click", function(event){
     }
 });
 
+bonusBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    resetValue(['bonus-coupon']);
+    alert('This coupon is not available');
+});
+
+payBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    if(!userAuth('pay-bill-bank-account-number', 'pay-bill-user-pin')) return;
+
+    let amount = getIntValue('pay-bill-money-amount');;
+    if(amount>0){
+    amount = getBalance() - amount;
+    userBalance.innerText = amount;
+    resetValue(['user-pay-bill-selected-bank', 'pay-bill-bank-account-number', 'pay-bill-user-pin', 'pay-bill-money-amount']);
+    } else {
+        alert("Given amount is not valid");
+    }
+});
 
 
 /* end event listener part */
